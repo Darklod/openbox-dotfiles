@@ -1,0 +1,23 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# Desktop and Compositor
+xfdesktop &
+compton -CG --config ~/.config/compton.conf &
+plank &
+opensnap &
+conky -c  ~/.config/conky/.conkyrc &
+
+# Trayer Bar
+trayer --expand true --transparent true --alpha 255 --edge top --align right --expand true --SetDockType false --widthtype request --iconspacing 6 &
+
+# Tray Icons
+python2 ~/.config/logout-tray/logout.py &
+volti &
+nm-applet &
+
+# Bluetooth
+bluetoothctl power on &
